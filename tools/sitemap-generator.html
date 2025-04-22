@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Sitemap Generator</h1>
+            <p class="lead">Generate XML sitemaps for your website.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="sitemap-form">
+                            <!-- Website Information -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Website Information</h5>
+                                <div class="mb-3">
+                                    <label for="base-url" class="form-label">Base URL</label>
+                                    <input type="url" class="form-control" id="base-url" required placeholder="https://example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="change-freq" class="form-label">Default Change Frequency</label>
+                                    <select class="form-select" id="change-freq">
+                                        <option value="always">Always</option>
+                                        <option value="hourly">Hourly</option>
+                                        <option value="daily" selected>Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="yearly">Yearly</option>
+                                        <option value="never">Never</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="priority" class="form-label">Default Priority</label>
+                                    <input type="range" class="form-range" id="priority" min="0" max="10" value="5">
+                                    <div class="d-flex justify-content-between">
+                                        <small>0.0</small>
+                                        <small id="priority-value">0.5</small>
+                                        <small>1.0</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- URLs -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">URLs</h5>
+                                <div class="mb-3">
+                                    <label for="urls" class="form-label">Enter URLs (one per line)</label>
+                                    <textarea class="form-control" id="urls" rows="10" required placeholder="/about&#10;/contact&#10;/products"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Generated Sitemap -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Generated Sitemap</h5>
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="generated-sitemap" style="height: 200px" readonly></textarea>
+                                    <label for="generated-sitemap">Copy this sitemap to your sitemap.xml file</label>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i> Generate Sitemap
+                                </button>
+                                <button type="button" class="btn btn-success" id="copy-btn">
+                                    <i class="bi bi-clipboard"></i> Copy Sitemap
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/sitemap-generator.js"></script>
+</body>
+</html> 

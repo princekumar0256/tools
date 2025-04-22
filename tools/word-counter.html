@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter - Multi-Tools Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header will be dynamically loaded here -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="tool-container">
+            <h1 class="mb-4">Word Counter</h1>
+            <p class="text-muted mb-4">Count words, characters, sentences, and paragraphs in your text.</p>
+            
+            <div class="mb-4">
+                <textarea id="text-input" class="form-control" rows="10" placeholder="Enter your text here..."></textarea>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Words</h5>
+                            <p id="word-count" class="card-text display-6">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Characters</h5>
+                            <p id="char-count" class="card-text display-6">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sentences</h5>
+                            <p id="sentence-count" class="card-text display-6">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Paragraphs</h5>
+                            <p id="paragraph-count" class="card-text display-6">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button id="clear-btn" class="btn btn-secondary">Clear Text</button>
+                    <button id="copy-btn" class="btn btn-primary">Copy Text</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="ad-container text-center p-3 border rounded">
+                    <p>Advertisement</p>
+                    <!-- Ad code will be placed here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be dynamically loaded here -->
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/tools/word-counter.js"></script>
+</body>
+</html> 

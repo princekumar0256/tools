@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Social Media Tools</h1>
+            <p class="lead">A collection of tools for social media content creation and management.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="social-form">
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Tool</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="youtube-thumbnail" value="youtube-thumbnail" checked>
+                                            <label class="form-check-label" for="youtube-thumbnail">
+                                                YouTube Thumbnail Downloader
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="instagram-photo" value="instagram-photo">
+                                            <label class="form-check-label" for="instagram-photo">
+                                                Instagram Photo Downloader
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="twitter-video" value="twitter-video">
+                                            <label class="form-check-label" for="twitter-video">
+                                                Twitter Video Downloader
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="facebook-video" value="facebook-video">
+                                            <label class="form-check-label" for="facebook-video">
+                                                Facebook Video Downloader
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="tiktok-video" value="tiktok-video">
+                                            <label class="form-check-label" for="tiktok-video">
+                                                TikTok Video Downloader
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="youtube-tags" value="youtube-tags">
+                                            <label class="form-check-label" for="youtube-tags">
+                                                YouTube Tags Extractor
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="hashtag" value="hashtag">
+                                            <label class="form-check-label" for="hashtag">
+                                                Hashtag Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="post-generator" value="post-generator">
+                                            <label class="form-check-label" for="post-generator">
+                                                Social Media Post Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="emoji" value="emoji">
+                                            <label class="form-check-label" for="emoji">
+                                                Emoji Keyboard
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="twitter-counter" value="twitter-counter">
+                                            <label class="form-check-label" for="twitter-counter">
+                                                Twitter Character Counter
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- YouTube Thumbnail Downloader -->
+                            <div id="youtube-thumbnail-tool" class="tool-section">
+                                <div class="mb-3">
+                                    <label for="youtube-url" class="form-label">YouTube Video URL</label>
+                                    <input type="url" class="form-control" id="youtube-url" placeholder="Enter YouTube video URL">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Thumbnail Quality</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="thumbnail-quality" id="maxres" value="maxres" checked>
+                                        <label class="form-check-label" for="maxres">Maximum Resolution</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="thumbnail-quality" id="hq" value="hq">
+                                        <label class="form-check-label" for="hq">High Quality</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="thumbnail-quality" id="mq" value="mq">
+                                        <label class="form-check-label" for="mq">Medium Quality</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Instagram Photo Downloader -->
+                            <div id="instagram-photo-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="instagram-url" class="form-label">Instagram Post URL</label>
+                                    <input type="url" class="form-control" id="instagram-url" placeholder="Enter Instagram post URL">
+                                </div>
+                            </div>
+
+                            <!-- Twitter Video Downloader -->
+                            <div id="twitter-video-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="twitter-url" class="form-label">Twitter Video URL</label>
+                                    <input type="url" class="form-control" id="twitter-url" placeholder="Enter Twitter video URL">
+                                </div>
+                            </div>
+
+                            <!-- Facebook Video Downloader -->
+                            <div id="facebook-video-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="facebook-url" class="form-label">Facebook Video URL</label>
+                                    <input type="url" class="form-control" id="facebook-url" placeholder="Enter Facebook video URL">
+                                </div>
+                            </div>
+
+                            <!-- TikTok Video Downloader -->
+                            <div id="tiktok-video-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="tiktok-url" class="form-label">TikTok Video URL</label>
+                                    <input type="url" class="form-control" id="tiktok-url" placeholder="Enter TikTok video URL">
+                                </div>
+                            </div>
+
+                            <!-- YouTube Tags Extractor -->
+                            <div id="youtube-tags-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="youtube-tags-url" class="form-label">YouTube Video URL</label>
+                                    <input type="url" class="form-control" id="youtube-tags-url" placeholder="Enter YouTube video URL">
+                                </div>
+                            </div>
+
+                            <!-- Hashtag Generator -->
+                            <div id="hashtag-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="hashtag-text" class="form-label">Text</label>
+                                    <textarea class="form-control" id="hashtag-text" rows="3" placeholder="Enter text to generate hashtags"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Options</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="remove-spaces" checked>
+                                        <label class="form-check-label" for="remove-spaces">Remove Spaces</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="add-numbers">
+                                        <label class="form-check-label" for="add-numbers">Add Numbers</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="trending">
+                                        <label class="form-check-label" for="trending">Include Trending Hashtags</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Post Generator -->
+                            <div id="post-generator-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="post-platform" class="form-label">Platform</label>
+                                    <select class="form-select" id="post-platform">
+                                        <option value="instagram">Instagram</option>
+                                        <option value="facebook">Facebook</option>
+                                        <option value="twitter">Twitter</option>
+                                        <option value="linkedin">LinkedIn</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-type" class="form-label">Post Type</label>
+                                    <select class="form-select" id="post-type">
+                                        <option value="promotional">Promotional</option>
+                                        <option value="informational">Informational</option>
+                                        <option value="engagement">Engagement</option>
+                                        <option value="announcement">Announcement</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-topic" class="form-label">Topic</label>
+                                    <input type="text" class="form-control" id="post-topic" placeholder="Enter post topic">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-tone" class="form-label">Tone</label>
+                                    <select class="form-select" id="post-tone">
+                                        <option value="professional">Professional</option>
+                                        <option value="casual">Casual</option>
+                                        <option value="friendly">Friendly</option>
+                                        <option value="humorous">Humorous</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Emoji Keyboard -->
+                            <div id="emoji-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="emoji-search" class="form-label">Search Emojis</label>
+                                    <input type="text" class="form-control" id="emoji-search" placeholder="Search emojis...">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Categories</label>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-outline-primary" data-category="smileys">😊 Smileys</button>
+                                        <button type="button" class="btn btn-outline-primary" data-category="animals">🐶 Animals</button>
+                                        <button type="button" class="btn btn-outline-primary" data-category="food">🍕 Food</button>
+                                        <button type="button" class="btn btn-outline-primary" data-category="activities">⚽ Activities</button>
+                                        <button type="button" class="btn btn-outline-primary" data-category="objects">📱 Objects</button>
+                                    </div>
+                                </div>
+                                <div id="emoji-grid" class="row g-2 mb-3">
+                                    <!-- Emojis will be loaded here -->
+                                </div>
+                            </div>
+
+                            <!-- Twitter Character Counter -->
+                            <div id="twitter-counter-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="tweet-text" class="form-label">Tweet Text</label>
+                                    <textarea class="form-control" id="tweet-text" rows="3" placeholder="Enter your tweet"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Characters: <span id="char-count">0</span>/280</span>
+                                        <span>Remaining: <span id="remaining-chars">280</span></span>
+                                    </div>
+                                    <div class="progress mt-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a tool and enter values to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-gear"></i> Generate
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/social-media-tools.js"></script>
+</body>
+</html> 

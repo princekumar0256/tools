@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Text Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">More Text Tools</h1>
+            <p class="lead">Additional text manipulation and generation tools.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="text-tools-form">
+                            <!-- Text Input -->
+                            <div class="mb-4">
+                                <label for="text-input" class="form-label">Enter Text</label>
+                                <textarea class="form-control" id="text-input" rows="5" placeholder="Enter or paste your text here..."></textarea>
+                            </div>
+
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Tool</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="text-to-speech" value="text-to-speech" checked>
+                                            <label class="form-check-label" for="text-to-speech">
+                                                Text to Speech
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="speech-to-text" value="speech-to-text">
+                                            <label class="form-check-label" for="speech-to-text">
+                                                Speech to Text
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="url-encoder" value="url-encoder">
+                                            <label class="form-check-label" for="url-encoder">
+                                                URL Encoder/Decoder
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="fancy-text" value="fancy-text">
+                                            <label class="form-check-label" for="fancy-text">
+                                                Fancy Text Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="random-text" value="random-text">
+                                            <label class="form-check-label" for="random-text">
+                                                Random Text Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text-to-Speech Options -->
+                            <div id="tts-options" class="mb-4">
+                                <h5 class="mb-3">Voice Options</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="voice-select" class="form-label">Select Voice</label>
+                                        <select class="form-select" id="voice-select">
+                                            <option value="">Loading voices...</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="rate" class="form-label">Speech Rate</label>
+                                        <input type="range" class="form-range" id="rate" min="0.5" max="2" step="0.1" value="1">
+                                        <div class="text-center" id="rate-value">1.0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- URL Encoder Options -->
+                            <div id="url-options" class="mb-4 d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" id="encode-btn">Encode</button>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" id="decode-btn">Decode</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fancy Text Options -->
+                            <div id="fancy-options" class="mb-4 d-none">
+                                <h5 class="mb-3">Fancy Text Styles</h5>
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" data-style="bold">𝐁𝐨𝐥𝐝</button>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" data-style="italic">𝘐𝘵𝘢𝘭𝘪𝘤</button>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" data-style="cursive">𝒞𝓊𝓇𝓈𝒾𝓋ℯ</button>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" data-style="gothic">𝔊𝔬𝔱𝔥𝔦𝔠</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Random Text Options -->
+                            <div id="random-options" class="mb-4 d-none">
+                                <h5 class="mb-3">Random Text Options</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="text-type" class="form-label">Text Type</label>
+                                        <select class="form-select" id="text-type">
+                                            <option value="lorem">Lorem Ipsum</option>
+                                            <option value="random">Random Words</option>
+                                            <option value="sentences">Random Sentences</option>
+                                            <option value="paragraphs">Random Paragraphs</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="text-length" class="form-label">Length</label>
+                                        <input type="number" class="form-control" id="text-length" value="100" min="10" max="1000">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a tool and enter text to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-play-fill"></i> Process
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/text-tools-2.js"></script>
+</body>
+</html> 

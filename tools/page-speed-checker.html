@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Speed Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Page Speed Checker</h1>
+            <p class="lead">Analyze your website's performance and get optimization recommendations.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="speed-form">
+                            <!-- URL Input -->
+                            <div class="mb-4">
+                                <label for="url" class="form-label">URL to Check</label>
+                                <input type="url" class="form-control" id="url" required placeholder="https://example.com">
+                            </div>
+
+                            <!-- Options -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Options</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="strategy" class="form-label">Strategy</label>
+                                        <select class="form-select" id="strategy">
+                                            <option value="mobile">Mobile</option>
+                                            <option value="desktop" selected>Desktop</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="category" class="form-label">Category</label>
+                                        <select class="form-select" id="category">
+                                            <option value="performance" selected>Performance</option>
+                                            <option value="accessibility">Accessibility</option>
+                                            <option value="best-practices">Best Practices</option>
+                                            <option value="seo">SEO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div class="row mb-4">
+                                    <div class="col-md-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Performance</h6>
+                                                <p class="card-text display-6" id="performance-score">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Accessibility</h6>
+                                                <p class="card-text display-6" id="accessibility-score">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Best Practices</h6>
+                                                <p class="card-text display-6" id="best-practices-score">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">SEO</h6>
+                                                <p class="card-text display-6" id="seo-score">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Metrics -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3">Key Metrics</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Metric</th>
+                                                    <th>Value</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="metrics">
+                                                <tr>
+                                                    <td colspan="3" class="text-center">Enter URL and click "Check" to see results</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Recommendations -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3">Recommendations</h6>
+                                    <div id="recommendations">
+                                        <p class="text-center">Enter URL and click "Check" to see recommendations</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-speedometer2"></i> Check
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/page-speed-checker.js"></script>
+</body>
+</html> 

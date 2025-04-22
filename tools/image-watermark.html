@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Watermark - Multi-Tools Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header will be dynamically loaded here -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="tool-container">
+            <h1 class="mb-4">Image Watermark</h1>
+            <p class="text-muted mb-4">Add text or image watermarks to your images with full customization options.</p>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="upload-area mb-4 p-4 border rounded text-center">
+                        <input type="file" id="image-input" accept="image/*" class="d-none">
+                        <label for="image-input" class="btn btn-primary mb-3">
+                            <i class="bi bi-upload"></i> Choose Image
+                        </label>
+                        <p class="text-muted">or drag and drop your image here</p>
+                        <div id="preview-container" class="mt-3 d-none">
+                            <div class="preview-wrapper">
+                                <img id="image-preview" class="img-fluid rounded" alt="Preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="options-area mb-4">
+                        <h5 class="mb-3">Watermark Options</h5>
+                        <div class="mb-3">
+                            <label class="form-label">Watermark Type</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="watermark-type" id="text-watermark" checked>
+                                <label class="btn btn-outline-primary" for="text-watermark">Text</label>
+                                <input type="radio" class="btn-check" name="watermark-type" id="image-watermark">
+                                <label class="btn btn-outline-primary" for="image-watermark">Image</label>
+                            </div>
+                        </div>
+
+                        <!-- Text Watermark Options -->
+                        <div id="text-options">
+                            <div class="mb-3">
+                                <label for="watermark-text" class="form-label">Watermark Text</label>
+                                <input type="text" class="form-control" id="watermark-text" placeholder="Enter watermark text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text-color" class="form-label">Text Color</label>
+                                <input type="color" class="form-control form-control-color" id="text-color" value="#ffffff">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text-size" class="form-label">Text Size</label>
+                                <input type="range" class="form-range" id="text-size" min="12" max="72" value="24">
+                                <div class="d-flex justify-content-between">
+                                    <span>Small</span>
+                                    <span id="text-size-value">24px</span>
+                                    <span>Large</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="text-opacity" class="form-label">Text Opacity</label>
+                                <input type="range" class="form-range" id="text-opacity" min="10" max="100" value="50">
+                                <div class="d-flex justify-content-between">
+                                    <span>Transparent</span>
+                                    <span id="text-opacity-value">50%</span>
+                                    <span>Opaque</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Watermark Options -->
+                        <div id="image-options" class="d-none">
+                            <div class="mb-3">
+                                <label for="watermark-image" class="form-label">Watermark Image</label>
+                                <input type="file" class="form-control" id="watermark-image" accept="image/*">
+                            </div>
+                            <div class="mb-3">
+                                <label for="image-size" class="form-label">Image Size</label>
+                                <input type="range" class="form-range" id="image-size" min="10" max="100" value="30">
+                                <div class="d-flex justify-content-between">
+                                    <span>Small</span>
+                                    <span id="image-size-value">30%</span>
+                                    <span>Large</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image-opacity" class="form-label">Image Opacity</label>
+                                <input type="range" class="form-range" id="image-opacity" min="10" max="100" value="50">
+                                <div class="d-flex justify-content-between">
+                                    <span>Transparent</span>
+                                    <span id="image-opacity-value">50%</span>
+                                    <span>Opaque</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Common Options -->
+                        <div class="mb-3">
+                            <label for="watermark-position" class="form-label">Position</label>
+                            <select class="form-select" id="watermark-position">
+                                <option value="top-left">Top Left</option>
+                                <option value="top-center">Top Center</option>
+                                <option value="top-right">Top Right</option>
+                                <option value="center-left">Center Left</option>
+                                <option value="center">Center</option>
+                                <option value="center-right">Center Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                                <option value="bottom-center">Bottom Center</option>
+                                <option value="bottom-right">Bottom Right</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="watermark-margin" class="form-label">Margin</label>
+                            <input type="range" class="form-range" id="watermark-margin" min="0" max="100" value="10">
+                            <div class="d-flex justify-content-between">
+                                <span>0%</span>
+                                <span id="watermark-margin-value">10%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tile-watermark">
+                                <label class="form-check-label" for="tile-watermark">
+                                    Tile watermark across image
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button id="apply-btn" class="btn btn-primary" disabled>
+                            <i class="bi bi-check-circle"></i> Apply Watermark
+                        </button>
+                        <button id="download-btn" class="btn btn-success" disabled>
+                            <i class="bi bi-download"></i> Download Image
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline-secondary" disabled>
+                            <i class="bi bi-arrow-counterclockwise"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="ad-container text-center p-3 border rounded">
+                    <p>Advertisement</p>
+                    <!-- Ad code will be placed here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be dynamically loaded here -->
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/tools/image-watermark.js"></script>
+</body>
+</html> 

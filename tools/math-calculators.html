@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math & Calculators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Math & Calculators</h1>
+            <p class="lead">Various calculators for everyday use.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="calculator-form">
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Calculator</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="percentage" value="percentage" checked>
+                                            <label class="form-check-label" for="percentage">
+                                                Percentage Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="age" value="age">
+                                            <label class="form-check-label" for="age">
+                                                Age Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="bmi" value="bmi">
+                                            <label class="form-check-label" for="bmi">
+                                                BMI Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="loan" value="loan">
+                                            <label class="form-check-label" for="loan">
+                                                Loan EMI Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="scientific" value="scientific">
+                                            <label class="form-check-label" for="scientific">
+                                                Scientific Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="discount" value="discount">
+                                            <label class="form-check-label" for="discount">
+                                                Discount Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="currency" value="currency">
+                                            <label class="form-check-label" for="currency">
+                                                Currency Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="timezone" value="timezone">
+                                            <label class="form-check-label" for="timezone">
+                                                Time Zone Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="binary" value="binary">
+                                            <label class="form-check-label" for="binary">
+                                                Binary to Decimal
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="calculator" id="tip" value="tip">
+                                            <label class="form-check-label" for="tip">
+                                                Tip Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Percentage Calculator -->
+                            <div id="percentage-calc" class="calculator-section">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="percentage-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="percentage-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="percentage-percent" class="form-label">Percentage</label>
+                                        <input type="number" class="form-control" id="percentage-percent" placeholder="Enter percentage">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Age Calculator -->
+                            <div id="age-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="birth-date" class="form-label">Birth Date</label>
+                                        <input type="date" class="form-control" id="birth-date">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BMI Calculator -->
+                            <div id="bmi-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="weight" class="form-label">Weight (kg)</label>
+                                        <input type="number" class="form-control" id="weight" placeholder="Enter weight">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="height" class="form-label">Height (cm)</label>
+                                        <input type="number" class="form-control" id="height" placeholder="Enter height">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Loan EMI Calculator -->
+                            <div id="loan-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="loan-amount" class="form-label">Loan Amount</label>
+                                        <input type="number" class="form-control" id="loan-amount" placeholder="Enter loan amount">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="interest-rate" class="form-label">Interest Rate (%)</label>
+                                        <input type="number" class="form-control" id="interest-rate" placeholder="Enter interest rate">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="loan-term" class="form-label">Loan Term (years)</label>
+                                        <input type="number" class="form-control" id="loan-term" placeholder="Enter loan term">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scientific Calculator -->
+                            <div id="scientific-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control text-end" id="scientific-display" readonly>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row g-2">
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="clear">C</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="backspace">⌫</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="percent">%</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-primary w-100" data-action="divide">÷</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="7">7</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="8">8</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="9">9</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-primary w-100" data-action="multiply">×</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="4">4</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="5">5</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="6">6</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-primary w-100" data-action="subtract">-</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="1">1</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="2">2</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="3">3</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-primary w-100" data-action="add">+</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="0">0</button>
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button" class="btn btn-outline-secondary w-100" data-action="decimal">.</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-primary w-100" data-action="equals">=</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Discount Calculator -->
+                            <div id="discount-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="original-price" class="form-label">Original Price</label>
+                                        <input type="number" class="form-control" id="original-price" placeholder="Enter original price">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="discount-percent" class="form-label">Discount Percentage</label>
+                                        <input type="number" class="form-control" id="discount-percent" placeholder="Enter discount percentage">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Currency Converter -->
+                            <div id="currency-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="amount" class="form-label">Amount</label>
+                                        <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="from-currency" class="form-label">From Currency</label>
+                                        <select class="form-select" id="from-currency">
+                                            <option value="USD">USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="INR">INR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="to-currency" class="form-label">To Currency</label>
+                                        <select class="form-select" id="to-currency">
+                                            <option value="USD">USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="INR">INR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Time Zone Converter -->
+                            <div id="timezone-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="date-time" class="form-label">Date & Time</label>
+                                        <input type="datetime-local" class="form-control" id="date-time">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="from-timezone" class="form-label">From Time Zone</label>
+                                        <select class="form-select" id="from-timezone">
+                                            <option value="UTC">UTC</option>
+                                            <option value="EST">EST</option>
+                                            <option value="PST">PST</option>
+                                            <option value="GMT">GMT</option>
+                                            <option value="IST">IST</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="to-timezone" class="form-label">To Time Zone</label>
+                                        <select class="form-select" id="to-timezone">
+                                            <option value="UTC">UTC</option>
+                                            <option value="EST">EST</option>
+                                            <option value="PST">PST</option>
+                                            <option value="GMT">GMT</option>
+                                            <option value="IST">IST</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Binary to Decimal Converter -->
+                            <div id="binary-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="binary-input" class="form-label">Binary Number</label>
+                                        <input type="text" class="form-control" id="binary-input" placeholder="Enter binary number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tip Calculator -->
+                            <div id="tip-calc" class="calculator-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="bill-amount" class="form-label">Bill Amount</label>
+                                        <input type="number" class="form-control" id="bill-amount" placeholder="Enter bill amount">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="tip-percent" class="form-label">Tip Percentage</label>
+                                        <input type="number" class="form-control" id="tip-percent" placeholder="Enter tip percentage">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="people-count" class="form-label">Number of People</label>
+                                        <input type="number" class="form-control" id="people-count" placeholder="Enter number of people">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a calculator and enter values to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-calculator"></i> Calculate
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/math-calculators.js"></script>
+</body>
+</html> 

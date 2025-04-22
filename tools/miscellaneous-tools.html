@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Miscellaneous Tools</h1>
+            <p class="lead">A collection of useful tools for various purposes.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="misc-form">
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Tool</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="barcode" value="barcode" checked>
+                                            <label class="form-check-label" for="barcode">
+                                                Barcode Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="meme" value="meme">
+                                            <label class="form-check-label" for="meme">
+                                                Meme Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="resume" value="resume">
+                                            <label class="form-check-label" for="resume">
+                                                Resume Builder
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="invoice" value="invoice">
+                                            <label class="form-check-label" for="invoice">
+                                                Invoice Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="business-name" value="business-name">
+                                            <label class="form-check-label" for="business-name">
+                                                Business Name Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="lottery" value="lottery">
+                                            <label class="form-check-label" for="lottery">
+                                                Lottery Number Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="coin" value="coin">
+                                            <label class="form-check-label" for="coin">
+                                                Flip a Coin Simulator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="random-number" value="random-number">
+                                            <label class="form-check-label" for="random-number">
+                                                Random Number Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="dice" value="dice">
+                                            <label class="form-check-label" for="dice">
+                                                Dice Roller Simulator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="speed-test" value="speed-test">
+                                            <label class="form-check-label" for="speed-test">
+                                                Internet Speed Test
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="planner" value="planner">
+                                            <label class="form-check-label" for="planner">
+                                                Daily Planner Creator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="wedding" value="wedding">
+                                            <label class="form-check-label" for="wedding">
+                                                Wedding Invitation Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="story" value="story">
+                                            <label class="form-check-label" for="story">
+                                                Story Plot Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="ebook" value="ebook">
+                                            <label class="form-check-label" for="ebook">
+                                                E-book Creator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="chatbot" value="chatbot">
+                                            <label class="form-check-label" for="chatbot">
+                                                AI Chatbot Demo
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="ip-tracker" value="ip-tracker">
+                                            <label class="form-check-label" for="ip-tracker">
+                                                IP Address Tracker
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="fake-address" value="fake-address">
+                                            <label class="form-check-label" for="fake-address">
+                                                Fake Address Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="electric-bill" value="electric-bill">
+                                            <label class="form-check-label" for="electric-bill">
+                                                Calculator for Electric Bills
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="leap-year" value="leap-year">
+                                            <label class="form-check-label" for="leap-year">
+                                                Leap Year Checker
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="numerology" value="numerology">
+                                            <label class="form-check-label" for="numerology">
+                                                Name to Numerology Calculator
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Barcode Generator -->
+                            <div id="barcode-tool" class="tool-section">
+                                <div class="mb-3">
+                                    <label for="barcode-text" class="form-label">Text to Encode</label>
+                                    <input type="text" class="form-control" id="barcode-text" placeholder="Enter text to generate barcode">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="barcode-type" class="form-label">Barcode Type</label>
+                                    <select class="form-select" id="barcode-type">
+                                        <option value="code128">Code 128</option>
+                                        <option value="code39">Code 39</option>
+                                        <option value="ean13">EAN-13</option>
+                                        <option value="upc">UPC</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Meme Generator -->
+                            <div id="meme-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="meme-template" class="form-label">Meme Template</label>
+                                    <select class="form-select" id="meme-template">
+                                        <option value="drake">Drake Hotline Bling</option>
+                                        <option value="distracted">Distracted Boyfriend</option>
+                                        <option value="change">Change My Mind</option>
+                                        <option value="expanding">Expanding Brain</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="meme-top" class="form-label">Top Text</label>
+                                    <input type="text" class="form-control" id="meme-top" placeholder="Enter top text">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="meme-bottom" class="form-label">Bottom Text</label>
+                                    <input type="text" class="form-control" id="meme-bottom" placeholder="Enter bottom text">
+                                </div>
+                            </div>
+
+                            <!-- Resume Builder -->
+                            <div id="resume-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="resume-name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="resume-name" placeholder="Enter your full name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume-email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="resume-email" placeholder="Enter your email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume-phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="resume-phone" placeholder="Enter your phone number">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume-experience" class="form-label">Work Experience</label>
+                                    <textarea class="form-control" id="resume-experience" rows="3" placeholder="Enter your work experience"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume-education" class="form-label">Education</label>
+                                    <textarea class="form-control" id="resume-education" rows="3" placeholder="Enter your education"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume-skills" class="form-label">Skills</label>
+                                    <textarea class="form-control" id="resume-skills" rows="3" placeholder="Enter your skills"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Generator -->
+                            <div id="invoice-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="invoice-number" class="form-label">Invoice Number</label>
+                                    <input type="text" class="form-control" id="invoice-number" placeholder="Enter invoice number">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="invoice-date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="invoice-date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="invoice-client" class="form-label">Client Name</label>
+                                    <input type="text" class="form-control" id="invoice-client" placeholder="Enter client name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="invoice-items" class="form-label">Items</label>
+                                    <div id="invoice-items">
+                                        <div class="row mb-2">
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" placeholder="Description">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="number" class="form-control" placeholder="Quantity">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="number" class="form-control" placeholder="Price">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="number" class="form-control" placeholder="Total" readonly>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-danger">×</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary" id="add-item">Add Item</button>
+                                </div>
+                            </div>
+
+                            <!-- Business Name Generator -->
+                            <div id="business-name-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="business-keywords" class="form-label">Keywords</label>
+                                    <input type="text" class="form-control" id="business-keywords" placeholder="Enter keywords separated by commas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="business-industry" class="form-label">Industry</label>
+                                    <select class="form-select" id="business-industry">
+                                        <option value="tech">Technology</option>
+                                        <option value="food">Food & Beverage</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="health">Health & Wellness</option>
+                                        <option value="education">Education</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Lottery Number Generator -->
+                            <div id="lottery-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="lottery-type" class="form-label">Lottery Type</label>
+                                    <select class="form-select" id="lottery-type">
+                                        <option value="powerball">Powerball</option>
+                                        <option value="megamillions">Mega Millions</option>
+                                        <option value="euro">EuroMillions</option>
+                                        <option value="lotto">Lotto</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lottery-count" class="form-label">Number of Sets</label>
+                                    <input type="number" class="form-control" id="lottery-count" min="1" max="10" value="1">
+                                </div>
+                            </div>
+
+                            <!-- Flip a Coin Simulator -->
+                            <div id="coin-tool" class="tool-section d-none">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary btn-lg" id="flip-coin">
+                                        Flip Coin
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Random Number Generator -->
+                            <div id="random-number-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="random-min" class="form-label">Minimum Value</label>
+                                    <input type="number" class="form-control" id="random-min" value="1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="random-max" class="form-label">Maximum Value</label>
+                                    <input type="number" class="form-control" id="random-max" value="100">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="random-count" class="form-label">Number of Results</label>
+                                    <input type="number" class="form-control" id="random-count" min="1" max="100" value="1">
+                                </div>
+                            </div>
+
+                            <!-- Dice Roller Simulator -->
+                            <div id="dice-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="dice-count" class="form-label">Number of Dice</label>
+                                    <input type="number" class="form-control" id="dice-count" min="1" max="10" value="1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dice-sides" class="form-label">Number of Sides</label>
+                                    <select class="form-select" id="dice-sides">
+                                        <option value="4">4-sided</option>
+                                        <option value="6" selected>6-sided</option>
+                                        <option value="8">8-sided</option>
+                                        <option value="10">10-sided</option>
+                                        <option value="12">12-sided</option>
+                                        <option value="20">20-sided</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Internet Speed Test -->
+                            <div id="speed-test-tool" class="tool-section d-none">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary btn-lg" id="start-speed-test">
+                                        Start Speed Test
+                                    </button>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Download Speed: <span id="download-speed">0</span> Mbps</span>
+                                        <span>Upload Speed: <span id="upload-speed">0</span> Mbps</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Daily Planner Creator -->
+                            <div id="planner-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="planner-date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="planner-date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="planner-tasks" class="form-label">Tasks</label>
+                                    <div id="planner-tasks">
+                                        <div class="row mb-2">
+                                            <div class="col-md-2">
+                                                <input type="time" class="form-control">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" placeholder="Task description">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-danger">×</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary" id="add-task">Add Task</button>
+                                </div>
+                            </div>
+
+                            <!-- Wedding Invitation Generator -->
+                            <div id="wedding-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="wedding-bride" class="form-label">Bride's Name</label>
+                                    <input type="text" class="form-control" id="wedding-bride" placeholder="Enter bride's name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="wedding-groom" class="form-label">Groom's Name</label>
+                                    <input type="text" class="form-control" id="wedding-groom" placeholder="Enter groom's name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="wedding-date" class="form-label">Wedding Date</label>
+                                    <input type="date" class="form-control" id="wedding-date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="wedding-venue" class="form-label">Venue</label>
+                                    <input type="text" class="form-control" id="wedding-venue" placeholder="Enter venue name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="wedding-template" class="form-label">Template</label>
+                                    <select class="form-select" id="wedding-template">
+                                        <option value="classic">Classic</option>
+                                        <option value="modern">Modern</option>
+                                        <option value="vintage">Vintage</option>
+                                        <option value="minimal">Minimal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Story Plot Generator -->
+                            <div id="story-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="story-genre" class="form-label">Genre</label>
+                                    <select class="form-select" id="story-genre">
+                                        <option value="fantasy">Fantasy</option>
+                                        <option value="scifi">Science Fiction</option>
+                                        <option value="mystery">Mystery</option>
+                                        <option value="romance">Romance</option>
+                                        <option value="horror">Horror</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="story-keywords" class="form-label">Keywords</label>
+                                    <input type="text" class="form-control" id="story-keywords" placeholder="Enter keywords separated by commas">
+                                </div>
+                            </div>
+
+                            <!-- E-book Creator -->
+                            <div id="ebook-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="ebook-title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="ebook-title" placeholder="Enter book title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ebook-author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="ebook-author" placeholder="Enter author name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ebook-content" class="form-label">Content</label>
+                                    <textarea class="form-control" id="ebook-content" rows="10" placeholder="Enter book content"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ebook-format" class="form-label">Format</label>
+                                    <select class="form-select" id="ebook-format">
+                                        <option value="pdf">PDF</option>
+                                        <option value="epub">EPUB</option>
+                                        <option value="mobi">MOBI</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- AI Chatbot Demo -->
+                            <div id="chatbot-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <div id="chat-messages" class="border rounded p-3 mb-3" style="height: 300px; overflow-y: auto;">
+                                        <div class="chat-message bot">
+                                            <p>Hello! How can I help you today?</p>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="chat-input" placeholder="Type your message...">
+                                        <button class="btn btn-primary" type="button" id="send-message">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- IP Address Tracker -->
+                            <div id="ip-tracker-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="ip-address" class="form-label">IP Address</label>
+                                    <input type="text" class="form-control" id="ip-address" placeholder="Enter IP address">
+                                </div>
+                            </div>
+
+                            <!-- Fake Address Generator -->
+                            <div id="fake-address-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="address-country" class="form-label">Country</label>
+                                    <select class="form-select" id="address-country">
+                                        <option value="us">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="ca">Canada</option>
+                                        <option value="au">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Calculator for Electric Bills -->
+                            <div id="electric-bill-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="electric-usage" class="form-label">Monthly Usage (kWh)</label>
+                                    <input type="number" class="form-control" id="electric-usage" placeholder="Enter monthly usage">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="electric-rate" class="form-label">Rate per kWh ($)</label>
+                                    <input type="number" class="form-control" id="electric-rate" placeholder="Enter rate per kWh">
+                                </div>
+                            </div>
+
+                            <!-- Leap Year Checker -->
+                            <div id="leap-year-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="leap-year" class="form-label">Year</label>
+                                    <input type="number" class="form-control" id="leap-year" placeholder="Enter year">
+                                </div>
+                            </div>
+
+                            <!-- Name to Numerology Calculator -->
+                            <div id="numerology-tool" class="tool-section d-none">
+                                <div class="mb-3">
+                                    <label for="numerology-name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="numerology-name" placeholder="Enter your full name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numerology-birthdate" class="form-label">Birth Date</label>
+                                    <input type="date" class="form-control" id="numerology-birthdate">
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a tool and enter values to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-gear"></i> Generate
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="../js/tools/miscellaneous-tools.js"></script>
+</body>
+</html> 

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Unit Converters</h1>
+            <p class="lead">Convert between different units of measurement.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="converter-form">
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Converter</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="length" value="length" checked>
+                                            <label class="form-check-label" for="length">
+                                                Length Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="weight" value="weight">
+                                            <label class="form-check-label" for="weight">
+                                                Weight Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="speed" value="speed">
+                                            <label class="form-check-label" for="speed">
+                                                Speed Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="temperature" value="temperature">
+                                            <label class="form-check-label" for="temperature">
+                                                Temperature Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="volume" value="volume">
+                                            <label class="form-check-label" for="volume">
+                                                Volume Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="data" value="data">
+                                            <label class="form-check-label" for="data">
+                                                Data Storage Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="energy" value="energy">
+                                            <label class="form-check-label" for="energy">
+                                                Energy Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="pressure" value="pressure">
+                                            <label class="form-check-label" for="pressure">
+                                                Pressure Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="fuel" value="fuel">
+                                            <label class="form-check-label" for="fuel">
+                                                Fuel Efficiency Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="converter" id="angle" value="angle">
+                                            <label class="form-check-label" for="angle">
+                                                Angle Converter
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Length Converter -->
+                            <div id="length-converter" class="converter-section">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="length-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="length-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="length-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="length-from">
+                                            <option value="mm">Millimeter (mm)</option>
+                                            <option value="cm">Centimeter (cm)</option>
+                                            <option value="m">Meter (m)</option>
+                                            <option value="km">Kilometer (km)</option>
+                                            <option value="in">Inch (in)</option>
+                                            <option value="ft">Foot (ft)</option>
+                                            <option value="yd">Yard (yd)</option>
+                                            <option value="mi">Mile (mi)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="length-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="length-to">
+                                            <option value="mm">Millimeter (mm)</option>
+                                            <option value="cm">Centimeter (cm)</option>
+                                            <option value="m">Meter (m)</option>
+                                            <option value="km">Kilometer (km)</option>
+                                            <option value="in">Inch (in)</option>
+                                            <option value="ft">Foot (ft)</option>
+                                            <option value="yd">Yard (yd)</option>
+                                            <option value="mi">Mile (mi)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Weight Converter -->
+                            <div id="weight-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="weight-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="weight-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="weight-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="weight-from">
+                                            <option value="mg">Milligram (mg)</option>
+                                            <option value="g">Gram (g)</option>
+                                            <option value="kg">Kilogram (kg)</option>
+                                            <option value="t">Metric Ton (t)</option>
+                                            <option value="oz">Ounce (oz)</option>
+                                            <option value="lb">Pound (lb)</option>
+                                            <option value="st">Stone (st)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="weight-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="weight-to">
+                                            <option value="mg">Milligram (mg)</option>
+                                            <option value="g">Gram (g)</option>
+                                            <option value="kg">Kilogram (kg)</option>
+                                            <option value="t">Metric Ton (t)</option>
+                                            <option value="oz">Ounce (oz)</option>
+                                            <option value="lb">Pound (lb)</option>
+                                            <option value="st">Stone (st)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Speed Converter -->
+                            <div id="speed-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="speed-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="speed-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="speed-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="speed-from">
+                                            <option value="mps">Meters per second (m/s)</option>
+                                            <option value="kph">Kilometers per hour (km/h)</option>
+                                            <option value="mph">Miles per hour (mph)</option>
+                                            <option value="knot">Knots (kn)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="speed-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="speed-to">
+                                            <option value="mps">Meters per second (m/s)</option>
+                                            <option value="kph">Kilometers per hour (km/h)</option>
+                                            <option value="mph">Miles per hour (mph)</option>
+                                            <option value="knot">Knots (kn)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Temperature Converter -->
+                            <div id="temperature-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="temperature-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="temperature-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="temperature-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="temperature-from">
+                                            <option value="c">Celsius (°C)</option>
+                                            <option value="f">Fahrenheit (°F)</option>
+                                            <option value="k">Kelvin (K)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="temperature-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="temperature-to">
+                                            <option value="c">Celsius (°C)</option>
+                                            <option value="f">Fahrenheit (°F)</option>
+                                            <option value="k">Kelvin (K)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Volume Converter -->
+                            <div id="volume-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="volume-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="volume-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="volume-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="volume-from">
+                                            <option value="ml">Milliliter (ml)</option>
+                                            <option value="l">Liter (l)</option>
+                                            <option value="m3">Cubic meter (m³)</option>
+                                            <option value="floz">Fluid ounce (fl oz)</option>
+                                            <option value="cup">Cup (cup)</option>
+                                            <option value="pt">Pint (pt)</option>
+                                            <option value="gal">Gallon (gal)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="volume-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="volume-to">
+                                            <option value="ml">Milliliter (ml)</option>
+                                            <option value="l">Liter (l)</option>
+                                            <option value="m3">Cubic meter (m³)</option>
+                                            <option value="floz">Fluid ounce (fl oz)</option>
+                                            <option value="cup">Cup (cup)</option>
+                                            <option value="pt">Pint (pt)</option>
+                                            <option value="gal">Gallon (gal)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data Storage Converter -->
+                            <div id="data-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="data-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="data-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="data-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="data-from">
+                                            <option value="b">Bit (b)</option>
+                                            <option value="B">Byte (B)</option>
+                                            <option value="KB">Kilobyte (KB)</option>
+                                            <option value="MB">Megabyte (MB)</option>
+                                            <option value="GB">Gigabyte (GB)</option>
+                                            <option value="TB">Terabyte (TB)</option>
+                                            <option value="PB">Petabyte (PB)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="data-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="data-to">
+                                            <option value="b">Bit (b)</option>
+                                            <option value="B">Byte (B)</option>
+                                            <option value="KB">Kilobyte (KB)</option>
+                                            <option value="MB">Megabyte (MB)</option>
+                                            <option value="GB">Gigabyte (GB)</option>
+                                            <option value="TB">Terabyte (TB)</option>
+                                            <option value="PB">Petabyte (PB)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Energy Converter -->
+                            <div id="energy-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="energy-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="energy-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="energy-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="energy-from">
+                                            <option value="j">Joule (J)</option>
+                                            <option value="kj">Kilojoule (kJ)</option>
+                                            <option value="cal">Calorie (cal)</option>
+                                            <option value="kcal">Kilocalorie (kcal)</option>
+                                            <option value="wh">Watt-hour (Wh)</option>
+                                            <option value="kwh">Kilowatt-hour (kWh)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="energy-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="energy-to">
+                                            <option value="j">Joule (J)</option>
+                                            <option value="kj">Kilojoule (kJ)</option>
+                                            <option value="cal">Calorie (cal)</option>
+                                            <option value="kcal">Kilocalorie (kcal)</option>
+                                            <option value="wh">Watt-hour (Wh)</option>
+                                            <option value="kwh">Kilowatt-hour (kWh)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pressure Converter -->
+                            <div id="pressure-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pressure-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="pressure-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pressure-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="pressure-from">
+                                            <option value="pa">Pascal (Pa)</option>
+                                            <option value="kpa">Kilopascal (kPa)</option>
+                                            <option value="bar">Bar (bar)</option>
+                                            <option value="psi">Pound per square inch (psi)</option>
+                                            <option value="atm">Atmosphere (atm)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pressure-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="pressure-to">
+                                            <option value="pa">Pascal (Pa)</option>
+                                            <option value="kpa">Kilopascal (kPa)</option>
+                                            <option value="bar">Bar (bar)</option>
+                                            <option value="psi">Pound per square inch (psi)</option>
+                                            <option value="atm">Atmosphere (atm)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fuel Efficiency Converter -->
+                            <div id="fuel-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fuel-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="fuel-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fuel-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="fuel-from">
+                                            <option value="mpg">Miles per gallon (mpg)</option>
+                                            <option value="l100km">Liters per 100 km (L/100km)</option>
+                                            <option value="kmpl">Kilometers per liter (km/L)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fuel-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="fuel-to">
+                                            <option value="mpg">Miles per gallon (mpg)</option>
+                                            <option value="l100km">Liters per 100 km (L/100km)</option>
+                                            <option value="kmpl">Kilometers per liter (km/L)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Angle Converter -->
+                            <div id="angle-converter" class="converter-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="angle-value" class="form-label">Value</label>
+                                        <input type="number" class="form-control" id="angle-value" placeholder="Enter value">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="angle-from" class="form-label">From Unit</label>
+                                        <select class="form-select" id="angle-from">
+                                            <option value="deg">Degree (°)</option>
+                                            <option value="rad">Radian (rad)</option>
+                                            <option value="grad">Gradian (grad)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="angle-to" class="form-label">To Unit</label>
+                                        <select class="form-select" id="angle-to">
+                                            <option value="deg">Degree (°)</option>
+                                            <option value="rad">Radian (rad)</option>
+                                            <option value="grad">Gradian (grad)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a converter and enter values to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-calculator"></i> Convert
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/unit-converters.js"></script>
+</body>
+</html> 

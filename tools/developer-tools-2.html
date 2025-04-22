@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Developer Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">More Developer Tools</h1>
+            <p class="lead">Additional tools for web developers.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="dev-tools-form">
+                            <!-- Tool Selection -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Tool</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="sql-formatter" value="sql-formatter" checked>
+                                            <label class="form-check-label" for="sql-formatter">
+                                                SQL Formatter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="htaccess" value="htaccess">
+                                            <label class="form-check-label" for="htaccess">
+                                                HTACCESS Redirect Generator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="md-to-html" value="md-to-html">
+                                            <label class="form-check-label" for="md-to-html">
+                                                Markdown to HTML
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="color-picker" value="color-picker">
+                                            <label class="form-check-label" for="color-picker">
+                                                Color Code Picker
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="base64" value="base64">
+                                            <label class="form-check-label" for="base64">
+                                                Base64 Encoder/Decoder
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="tool" id="ip-lookup" value="ip-lookup">
+                                            <label class="form-check-label" for="ip-lookup">
+                                                IP Address Lookup
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Input Area -->
+                            <div class="mb-4">
+                                <label for="input-code" class="form-label">Input</label>
+                                <textarea class="form-control font-monospace" id="input-code" rows="10" placeholder="Enter your input here..."></textarea>
+                            </div>
+
+                            <!-- SQL Formatter Options -->
+                            <div id="sql-options" class="mb-4">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="sql-indent" class="form-label">Indent Style</label>
+                                        <select class="form-select" id="sql-indent">
+                                            <option value="2">2 spaces</option>
+                                            <option value="4" selected>4 spaces</option>
+                                            <option value="tab">Tab</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="checkbox" id="uppercase-keywords" checked>
+                                            <label class="form-check-label" for="uppercase-keywords">
+                                                Uppercase Keywords
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- HTACCESS Options -->
+                            <div id="htaccess-options" class="mb-4 d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="redirect-type" class="form-label">Redirect Type</label>
+                                        <select class="form-select" id="redirect-type">
+                                            <option value="301">301 (Permanent)</option>
+                                            <option value="302">302 (Temporary)</option>
+                                            <option value="307">307 (Temporary)</option>
+                                            <option value="308">308 (Permanent)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="source-path" class="form-label">Source Path</label>
+                                        <input type="text" class="form-control" id="source-path" placeholder="/old-page.html">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="target-path" class="form-label">Target Path</label>
+                                        <input type="text" class="form-control" id="target-path" placeholder="/new-page.html">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="checkbox" id="www-redirect" checked>
+                                            <label class="form-check-label" for="www-redirect">
+                                                Add WWW Redirect
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Color Picker Options -->
+                            <div id="color-options" class="mb-4 d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="color-input" class="form-label">Select Color</label>
+                                        <input type="text" class="form-control" id="color-input">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="color-format" class="form-label">Color Format</label>
+                                        <select class="form-select" id="color-format">
+                                            <option value="hex">HEX</option>
+                                            <option value="rgb">RGB</option>
+                                            <option value="rgba">RGBA</option>
+                                            <option value="hsl">HSL</option>
+                                            <option value="hsla">HSLA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Base64 Options -->
+                            <div id="base64-options" class="mb-4 d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" id="encode-btn">Encode</button>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button type="button" class="btn btn-outline-primary w-100" id="decode-btn">Decode</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- IP Lookup Options -->
+                            <div id="ip-options" class="mb-4 d-none">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="ip-input" class="form-label">IP Address</label>
+                                        <input type="text" class="form-control" id="ip-input" placeholder="Enter IP address">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button type="button" class="btn btn-outline-primary mt-4 w-100" id="lookup-btn">
+                                            <i class="bi bi-search"></i> Lookup
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div id="results" class="border rounded p-3 bg-light">
+                                    <p class="text-center text-muted">Select a tool and enter input to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-play-fill"></i> Process
+                                </button>
+                                <button type="button" class="btn btn-success" id="copy-btn">
+                                    <i class="bi bi-clipboard"></i> Copy
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js"></script>
+    <script src="../js/tools/developer-tools-2.js"></script>
+</body>
+</html> 

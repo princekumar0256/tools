@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Index Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Google Index Checker</h1>
+            <p class="lead">Check if your website or specific pages are indexed by Google.</p>
+        </header>
+
+        <main class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="index-checker-form">
+                            <!-- URL Input -->
+                            <div class="mb-4">
+                                <label for="url" class="form-label">URL to Check</label>
+                                <input type="url" class="form-control" id="url" required placeholder="https://example.com">
+                            </div>
+
+                            <!-- Check Options -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Check Options</h5>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="check-site" checked>
+                                    <label class="form-check-label" for="check-site">
+                                        Check entire site
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="check-pages">
+                                    <label class="form-check-label" for="check-pages">
+                                        Check specific pages
+                                    </label>
+                                </div>
+                                <div class="mb-3" id="pages-container" style="display: none;">
+                                    <label for="pages" class="form-label">Pages to Check</label>
+                                    <textarea class="form-control" id="pages" rows="5" placeholder="/about&#10;/contact&#10;/products"></textarea>
+                                    <div class="form-text">Enter one page path per line</div>
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Results</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>URL</th>
+                                                <th>Status</th>
+                                                <th>Last Checked</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="results">
+                                            <tr>
+                                                <td colspan="3" class="text-center">Enter URL and click "Check" to see results</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Statistics -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Statistics</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Total Pages</h6>
+                                                <p class="card-text display-6" id="total-pages">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Indexed</h6>
+                                                <p class="card-text display-6" id="indexed-pages">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">Not Indexed</h6>
+                                                <p class="card-text display-6" id="not-indexed-pages">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Check
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tools/google-index-checker.js"></script>
+</body>
+</html> 
